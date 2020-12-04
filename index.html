@@ -1,51 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Pair game</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="pair-game.css">
-  <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.8.1/css/all.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair game</title>
+    <link rel="stylesheet" href="pair-game.css">
+    </head>
 
 <body>
+    ​
+    <header>
+        <H1>Pairs game</H1>
+        <h3>Click any card to begin</h3>
+    </header>
+    <section class="panel">
+        <div class="panel-div">
+            <h3 class="moves">Moves: <span class="moves">1</span></h3>
+        </div>
+        <div class="panel-div">
+            <h3 class="time">Time: <span class="time-span">00:00</span></h3>
+        </div>
+    </section>
 
-  <header>
-    <H1>PAIRS GAME</H1>
-  </header>
-
-  <h3>Click any card to begin</h3>
-
-<section class="panel">
-  <div class="panel-div"><h3 class="moves">Moves: <span class="moves">1</span></h3></div>
-  <div class="panel-div"><h3 class="time">Time: <span class="time">00:00</span></h3></div>
-</section>  
-
-  <main>
-    <div class="main_container">
-      <div class="container firstrow">
-        <div class="cards deck"><i class="fas fa-dog"></i></div>
-        <div class="cards deck"> <i class="fas fa-crow"></i></div>
-        <div class="cards deck"> <i class="fas fa-frog"></i></div>
-        <div class="cards deck"> <i class="fas fa-dog"></i></div>
-        <div class="cards deck"><i class="fas fa-spider"></i></div>
-      </div>
-      <div class="container secondrow">
-        <div class="cards deck"> <i class="fas fa-frog"></i></div>
-        <div class="cards deck"> <i class="fas fa-cat"></i></div>
-        <div class="cards deck"><i class="fas fa-spider"></i></div>
-        <div class="cards deck"> <i class="fas fa-crow"></i></div>
-        <div class="cards deck"> <i class="fas fa-cat"></i></div>
-      </div>
-    </div>
-  </main>
-
- <div class="reset"><button>Reset</button></div> 
+    <div class="game-container">
+        <div class="card-container">
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+        ​
+        <div class="reset-div"><button class="reset">Reset</button></div> 
+        <div class="start"><button>Start</button></div> 
 
 
-  <script src="pair-game.js"></script>
+        <script src="./pair-game.js"></script>
+        <script src="https://kit.fontawesome.com/04e74f6e58.js" crossorigin="anonymous"></script>
+        
 </body>
 
 </html>
