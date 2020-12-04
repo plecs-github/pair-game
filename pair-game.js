@@ -69,31 +69,47 @@
         }
     };
 
-    const padNumbers = (num) => {
-        return num < 10 ? `0${num}` : `${num}`;
-    };
-    let stopperTime = 0;
-    let stopperIsRunning = false;
-    setInterval( () => {
-        /* if (!stopperIsRunning) {
-            return;
-        }
-         */
-        stopperTime++;
-        const seconds = padNumbers(stopperTime % 60);
-        const minutes = padNumbers(Math.floor(stopperTime / 60) % 60);
-        const time = `${[minutes, seconds].join(':')}`;
-        const timer = document.querySelector('.time-span');
-        timer.textContent = time;
-    }, 1000);
-    
-    document.querySelector('.start').addEventListener('click', () => {
-        if (stopperIsRunning) {
-            stopperIsRunning = false;
-            stopperTime = 0;
-        } else {
-            stopperIsRunning = true;
-        }
-    });
-    cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach(card => card.addEventListener('click', flipCard));
 })();
+
+
+/* click counter and time starter */
+
+    let button = document.querySelector('.card-container'),
+        count = 0;
+        button.onclick = function () {
+        count += 1;
+        document.querySelector('.moves').innerHTML = `Moves: ${count}`;
+        timer()
+    };
+
+    let stopper = document.querySelector('.time-span'),
+    start = document.getElementById('start'),
+    clear = document.querySelector('.reset'),
+    seconds = 0, minutes = 0,
+    t;
+    
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+    }
+      
+stopper.innerHTML = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+clear.onclick = function() {
+    stopper.innerHTML = "00:00";
+    minutes = 0; seconds = 0;
+    clearTimeout(t);
+}
+
+
+
+
+
