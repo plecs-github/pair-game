@@ -77,11 +77,14 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
     let button = document.querySelector('.card-container'),
         count = 0;
+        let gameStarted = false;
+        
         button.onclick = function () {
         count += 1;
         document.querySelector('.moves').innerHTML = `Moves: ${count}`;
-        timer()
-    };
+        if (count<=1) {timer ()}; 
+        return
+        };
 
     let stopper = document.querySelector('.time-span'),
     start = document.getElementById('start'),
